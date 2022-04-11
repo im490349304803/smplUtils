@@ -1,2 +1,3 @@
 CFLAGS=-g -O3
 LDFLAGS=-O3
+CC?=gcc
