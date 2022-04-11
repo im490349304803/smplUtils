@@ -7,11 +7,11 @@ prog: $(OBJ) convl
 	$(CC) obj/low.o $(CFLAGS) $(LDFLAGS) $(LIBS)  -o obj/low
 	$(CC) obj/uper.o $(CFLAGS) $(LDFLAGS) $(LIBS)  -o obj/uper
 
-obj/%.o: %.c mdirs
+obj/%.o: %.c obj
 	$(CC) $(CFLAGS) -c $< -o $@
 convl:
 	$(MAKE) -C convert
-mdirs:
+obj: 
 	-mkdir -p obj
 clean:
 	-rm -r obj

@@ -12,10 +12,10 @@ lib: $(OBJ)
 prog: $(OBJ)
 	$(CC) $(CFLAGS) $(LDFLAGS) $(LIBS) $(OBJ) -o prog
 
-obj/%.o: %.c mdirs
+obj/%.o: %.c  obj
 	$(CC) $(CFLAGS) -c $< -o $@
 
-mdirs:
+obj: 
 	-mkdir obj
 clean:
 	-rm -r obj

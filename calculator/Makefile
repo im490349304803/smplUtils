@@ -6,11 +6,11 @@ RANLIB = ranlib
 prog: $(OBJ) calcl
 	$(CC) $(OBJ) $(CFLAGS) $(LDFLAGS) $(LIBS)  -o obj/prog
 
-obj/%.o: %.c mdirs
+obj/%.o: %.c obj
 	$(CC) $(CFLAGS) -c $< -o $@
 calcl:
 	$(MAKE) -C calc
-mdirs:
+obj: 
 	-mkdir -p obj
 clean:
 	-rm -r obj
